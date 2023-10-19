@@ -35,6 +35,19 @@
       "0": {
           "type": "vcs",
           "url": "git@github.com:cammino/Yireo_NextGenImages.git"
+      },
+      "1": {
+          "type": "package",
+          "package": {
+              "name": "cammino/magento2-admin-activity",
+              "version": "1.0.8",
+              "type": "magento2-module",
+              "source": {
+                  "url": "https://github.com/cammino/magento2-admin-activity.git",
+                  "type": "git",
+                  "reference": "master"
+              }
+          }
       }
   },
   "require-dev": {
