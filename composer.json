@@ -34,7 +34,7 @@
   "repositories": {
       "0": {
           "type": "vcs",
-          "url": "git@github.com:cammino/Yireo_NextGenImages.git"
+          "url": "https://github.com/cammino/Yireo_NextGenImages.git"
       },
       "1": {
           "type": "package",
