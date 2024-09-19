@@ -6,7 +6,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.13.0] 
+## [0.14.2] - 23 August 2024
+### Fixed
+- Guarantee return type is string #170
+
+## [0.14.1] - 23 August 2024
+### Fixed
+- Add CSP nonces to inline scripts
+
+## [0.14.0] - 20 June 2024
+### Fixed
+- Move GraphQL support in seperate [module](https://github.com/yireo/Yireo_Webp2GraphQl)
+
+## [0.13.5] - 4 April 2024
+### Fixed
+- Compatibility with Magento >=2.4.7-beta3
+
+## [0.13.4] - 26 September 2023
+### Fixed
+- Catch the correct exception when using properties of a specific exception.
+
+## [0.13.3] - 22 September 2023
+### Fixed
+- Properly check for MIME-typed (fix of #149)
+- Add "webp" / "nowebp" to body class for Hyva
+
+## [0.13.2] - 6 September 2023
+### Fixed
+- Make sure convertor is called for unsupported types #149 (@kernstmediarox)
+
+## [0.13.1] - 6 September 2023
+### Fixed
+- Remove non-existing `description` in exception handling
+- Move Hyva dependency to separate package `yireo/magento2-webp2-for-hyva`
+
+## [0.13.0] - 30 August 2023
 ### Added
 - Copied GraphQL `url_webp` from Hyva compatibility module to here
 

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Yireo\Webp2\Convertor;
 
+use Exception;
 use Psr\Log\LoggerInterface;
 use WebPConvert\Convert\Exceptions\ConversionFailed\InvalidInput\InvalidImageTypeException;
 use WebPConvert\Convert\Exceptions\ConversionFailedException;
@@ -47,15 +48,18 @@ class ConvertWrapper
     public function convert(string $sourceImageFilename, string $destinationImageFilename): void
     {
         $options = $this->getOptions();
-        foreach ($this->config->getConvertors() as $convertor) {
+        foreach ($this->config->getConvertors() as $convertor){
             $options['converter'] = $convertor;
             try {
                 WebPConvert::convert($sourceImageFilename, $destinationImageFilename, $options);
-                break;
-            } catch (\Exception $e) {
+            } catch (ConversionFailedException $e) {
                 $this->logger->debug($e->getMessage() . ' - ' . $e->description, $e->getTrace());
                 continue;
+            } catch (\Exception $e) {
+                $this->logger->debug($e->getMessage(), $e->getTrace());
+                continue;
             }
+            break;
         }
     }
 
